@@ -1,0 +1,28 @@
+.main_section {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.25rem/* 20px */;
+
+}
+@media (min-width: 768px) {
+    .main_section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (min-width: 1280px) {
+    .main_section {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+.add_meeting {
+    background-color: rgb(255 116 46);
+}
+.join_meeting {
+    background-color: rgb(14 120 249);
+}
+.schedule {
+    background-color: rgb(131 14 249);
+}
+.recordings {
+    background-color: rgb(249 169 14);
+}

@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar/Navbar'
-import '../styles/Home.css'
+import '../styles/Root.css'
 import Sidebar from '../components/Sidebar/Sidebar'
 import { Helmet } from 'react-helmet';
 import { Outlet } from 'react-router-dom';
@@ -24,5 +24,4 @@ const Root = () => {
         </div>
     )
 }
-
 export default Root
