@@ -20,7 +20,7 @@ const DetailAuthorPage = () => {
       });
   }, []);
 
-  
+
   useEffect(() => {
     const fetchAuthors = async () => {
       try {
@@ -40,7 +40,7 @@ const DetailAuthorPage = () => {
 
     fetchAuthors();
   }, []);
-  
+
 
   return (
     <div className="max-w-7xl mx-auto p-4 mt-16">
@@ -78,63 +78,6 @@ const DetailAuthorPage = () => {
               </p>
             </div>
           </div>
-          <div>
-
-            </div>
-            <div>
-
-            </div>
-            <div>
-
-            </div>
-            <div>
-
-            </div>
-            <div>
-
-            </div><div>
-
-</div>
-<div>
-
-</div>
-<div>
-
-</div>
-<div>
-
-</div>
-<div>
-
-</div><div>
-
-</div>
-<div>
-
-</div>
-<div>
-
-</div>
-<div>
-
-</div>
-<div>
-
-</div><div>
-
-</div>
-<div>
-
-</div>
-<div>
-
-</div>
-<div>
-
-</div>
-<div>
-
-</div>
         </div>
       )}
       {books && (
