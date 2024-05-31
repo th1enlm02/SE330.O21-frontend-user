@@ -4,24 +4,7 @@ import { useLocation, Link, useParams } from "react-router-dom";
 
 const CategoryBreadcrumb = () => {
   const categoryId = useParams();
-  // const location = useLocation();
-  // const pathname = location.pathname;
 
-  // const findCategory = (pathname, categories) => {
-  //   const pathSegments = pathname
-  //     .split("/")
-  //     .filter((segment) => segment !== "");
-  //   let category = null;
-  //   category = categories.find(
-  //     (cat) => cat.link === `/${pathSegments[0]}`
-  //   );
-  //   return category;
-  // };
-
-  // const category = findCategory(pathname, categories);
-
-
-  // const breadcrumbs = [category];
   const [breadcrumbs, setBreadCrumbs] = useState([]);
   useEffect(() => {
     Axios.get("http://localhost:8080/api/danhmuc/getalldanhmuc")
@@ -41,6 +24,28 @@ const CategoryBreadcrumb = () => {
             Trang chủ
           </Link>
         </li>
+        <div>
+
+        </div>
+        <div>
+
+        </div><div>
+
+        </div><div>
+
+        </div><div>
+
+        </div><div>
+
+        </div><div>
+
+        </div><div>
+
+        </div><div>
+
+        </div><div>
+
+        </div>
         {breadcrumbs.map((breadcrumb, index) =>
         (
           index + 1 == categoryId.category ? (<li key={index} className="breadcrumb-item">
