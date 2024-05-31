@@ -24,28 +24,6 @@ const CategoryBreadcrumb = () => {
             Trang chủ
           </Link>
         </li>
-        <div>
-
-        </div>
-        <div>
-
-        </div><div>
-
-        </div><div>
-
-        </div><div>
-
-        </div><div>
-
-        </div><div>
-
-        </div><div>
-
-        </div><div>
-
-        </div><div>
-
-        </div>
         {breadcrumbs.map((breadcrumb, index) =>
         (
           index + 1 == categoryId.category ? (<li key={index} className="breadcrumb-item">
