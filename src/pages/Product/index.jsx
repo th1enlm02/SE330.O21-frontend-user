@@ -20,6 +20,24 @@ const ProductPage = () => {
     setActiveTab(tab);
   };
 
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/sach/getsachbyid/${productId}`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data);
+          setProduct(data);
+        } else {
+          throw new Error("Failed to fetch product");
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
   const addToCart = async () => {
     if (!user || !user.id) {
       alert("Bạn hãy đăng nhập trước khi thêm sản phẩm vào giỏ hàng!");
@@ -38,23 +56,7 @@ const ProductPage = () => {
     }
   };
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:8080/api/sach/getsachbyid/${productId}`
-        );
-        if (response.ok) {
-          const data = await response.json();
-          console.log(data);
-          setProduct(data);
-        } else {
-          throw new Error("Failed to fetch product");
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  
 
     fetchProduct();
   }, [productId]);
@@ -136,6 +138,19 @@ const ProductPage = () => {
                 </button>
               </div>
             </div>
+
+            {/* <div className="flex w-full">
+                <button className="btn btn-primary btn-xl" onClick={addToCart}>
+                  Thêm vào giỏ hàng
+                </button>
+              </div>
+            </div>
+            <div className="flex w-full">
+                <button className="btn btn-primary btn-xl" onClick={addToCart}>
+                  Thêm vào giỏ hàng
+                </button>
+              </div>
+            </div> */}
           </div>
         </div>
         <div className="bg-white rounded-lg p-6 overflow-hidden">
