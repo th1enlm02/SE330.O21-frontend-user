@@ -138,19 +138,6 @@ const ProductPage = () => {
                 </button>
               </div>
             </div>
-
-            {/* <div className="flex w-full">
-                <button className="btn btn-primary btn-xl" onClick={addToCart}>
-                  Thêm vào giỏ hàng
-                </button>
-              </div>
-            </div>
-            <div className="flex w-full">
-                <button className="btn btn-primary btn-xl" onClick={addToCart}>
-                  Thêm vào giỏ hàng
-                </button>
-              </div>
-            </div> */}
           </div>
         </div>
         <div className="bg-white rounded-lg p-6 overflow-hidden">
