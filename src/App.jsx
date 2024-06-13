@@ -1,24 +1,39 @@
-import { Route, Routes } from 'react-router-dom';
-import Root from './pages/Root';
-import Home from './pages/Home';
-import Upcoming from './pages/Upcoming';
-import Previous from './pages/Previous';
-import Recordings from './pages/Recordings';
-import PersonalRoom from './pages/PersonalRoom';
-
+// import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import UserLayout from "./layouts/UserLayout";
+import { publicRoutes } from "./routes";
+import { UserProvider } from "./context/UserContext";
 function App() {
   return (
-    <main style={{ backgroundColor: '#161925' }}>
-      <Routes>
-        <Route path="/" element={<Root />} >
-          <Route path="/" element={<Home />} />
-          <Route path="/upcoming" element={<Upcoming />} />
-          <Route path="/previous" element={<Previous />}/>
-          <Route path="/recordings" element={<Recordings />}/>
-          <Route path="/personal-room" element={<PersonalRoom />}/>
-        </Route>
-      </Routes>
-    </main>
+    <UserProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            {publicRoutes.map((route, index) => {
+              const Page = route.component;
+              let Layout = UserLayout;
+              if (route.layout) Layout = route.layout;
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={
+                    <Layout {...route.props}>
+                      {route.breadcrumb && (
+                        <route.breadcrumb title={route.props?.heading} />
+                      )}
+                      <Page />
+                    </Layout>
+                  }
+                >
+                  <Route index element={<Page />} />
+                </Route>
+              );
+            })}
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 
